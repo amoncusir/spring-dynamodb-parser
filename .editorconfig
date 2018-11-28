@@ -1,0 +1,36 @@
+# Default style config fo Aran Moncusí Ramírez
+
+# top-most file
+root = true
+
+## Generic rules
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+max_line_length = 120
+
+## Java and Kotlin rules
+[*.{kt,java}]
+ident_style = space
+ident_size = 4
+curly_bracket_next_line = true
+spaces_around_operators = true
+spaces_around_brackets = outside
+indent_brace_style = Allman
+curly-spacing = disable
+wildcard_import_limit = 15
+#continuation_indent_size = ?
+
+[{prod,*.yml,*.yaml}]
+indent_style=space
+indent_size=2
+
+[{.eslintrc,.babelrc,jest.config,.stylelintrc,*.bowerrc,*.jsb3,*.jsb2,*.json}]
+indent_style=space
+indent_size=2
+
+[{*.ddl,*.sql}]
+indent_style=space
+indent_size=2

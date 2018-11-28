@@ -1,0 +1,44 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.10'
+}
+
+group 'info.digitalpoet.utils'
+version '0.0.1'
+
+repositories {
+    mavenCentral()
+
+    maven { url "https://dl.bintray.com/amoncusir/utils" }
+}
+
+dependencies {
+
+    // Kotlin dependencies
+    implementation('org.jetbrains.kotlin:kotlin-reflect')
+    implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk8')
+    
+    // Kotlonic dependencies
+    implementation('info.digitalpoet.utils:kotlonic:0.0.1')
+
+    // Aws Dependencies for DynamoDB
+    implementation('com.amazonaws:aws-java-sdk-dynamodb:1.11.428')
+
+    // Koltin logger
+    implementation('io.github.microutils:kotlin-logging:1.5.6')
+
+    // Reactor Stream
+    implementation('io.projectreactor:reactor-core:3.2.3.RELEASE')
+
+    // Spring Framework
+    implementation('org.springframework:spring-core:5.1.3.RELEASE')
+    implementation('org.springframework:spring-beans:5.1.3.RELEASE')
+    implementation('org.springframework:spring-context:5.1.3.RELEASE')
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
