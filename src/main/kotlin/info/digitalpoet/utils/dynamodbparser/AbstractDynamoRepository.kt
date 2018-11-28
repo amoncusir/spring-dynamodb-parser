@@ -53,6 +53,7 @@ abstract class AbstractDynamoRepository<T: Any>(
 
     //~ Open Methods ===================================================================================================
 
+    @Suppress("MagicNumber")
     open fun <T: ResponseMetadata> AmazonWebServiceResult<T>.isOK(): Boolean =
         sdkHttpMetadata.httpStatusCode in 200..299
 

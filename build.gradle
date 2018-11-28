@@ -1,11 +1,15 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.10'
+
+    // Quality check
+    id 'io.gitlab.arturbosch.detekt' version "1.0.0-RC11"
 }
 
 group 'info.digitalpoet.utils'
 version '0.0.1'
 
 repositories {
+    jcenter()
     mavenCentral()
 
     maven { url "https://dl.bintray.com/amoncusir/utils" }
@@ -16,7 +20,7 @@ dependencies {
     // Kotlin dependencies
     implementation('org.jetbrains.kotlin:kotlin-reflect')
     implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk8')
-    
+
     // Kotlonic dependencies
     implementation('info.digitalpoet.utils:kotlonic:0.0.1')
 
@@ -41,4 +45,9 @@ compileKotlin {
 
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+detekt {
+    parallel = true
+    config = files("${project.rootProject.projectDir.absolutePath}/detekt-config.yml")
 }
